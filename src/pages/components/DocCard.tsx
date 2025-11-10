@@ -6,7 +6,7 @@ type DocCardProps = { doc: ComponentDoc };
 
 const DocCard = ({ doc }: DocCardProps) => {
   return (
-    <Card className="overflow-hidden h-full flex flex-col shadow-sm hover:shadow-md transition-shadow">
+    <Card className="overflow-hidden h-fit flex flex-col shadow-sm hover:shadow-md transition-shadow">
       <Card.Header className="border-b bg-muted/20 pb-4">
         <Card.Title className="text-xl font-semibold">{doc.title}</Card.Title>
         {doc.description ? (

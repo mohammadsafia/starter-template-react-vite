@@ -7,7 +7,7 @@ type HookUtilCardProps = { doc: HookUtilDoc };
 
 const HookUtilCard = ({ doc }: HookUtilCardProps) => {
   return (
-    <Card className="overflow-hidden h-full flex flex-col shadow-sm hover:shadow-md transition-shadow">
+    <Card className="overflow-hidden h-fit flex flex-col shadow-sm hover:shadow-md transition-shadow">
       <Card.Header className="border-b bg-muted/20 pb-4">
         <div className="flex items-center justify-between mb-2">
           <Card.Title className="text-xl font-semibold">{doc.title}</Card.Title>

@@ -10,9 +10,7 @@ import { ThemeProvider } from '@contexts';
 import { Toaster, ThemeCustomizer } from '@components/shared';
 
 const ComponentsGalleryPage = () => {
-  const [query, setQuery] = useState('');
-
-  const filter = (docs: ComponentDoc[]) =>
+  const [query, setQuery] = useState('');  const filter = (docs: ComponentDoc[]) =>
     docs.filter((d) => {
       const hay = `${d.title} ${(d.tags || []).join(' ')}`.toLowerCase();
       return hay.includes(query.toLowerCase());
@@ -90,9 +88,11 @@ const ComponentsGalleryPage = () => {
               {filtered.ui.length === 0 ? (
                 <div className="text-muted-foreground py-16 text-center">No UI components found matching "{query}"</div>
               ) : (
-                <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
+                <div className="columns-1 gap-8 lg:columns-2 xl:columns-3">
                   {filtered.ui.map((doc) => (
-                    <DocCard key={doc.id} doc={doc} />
+                    <div key={doc.id} className="break-inside-avoid mb-8">
+                      <DocCard doc={doc} />
+                    </div>
                   ))}
                 </div>
               )}
@@ -102,9 +102,11 @@ const ComponentsGalleryPage = () => {
               {filtered.forms.length === 0 ? (
                 <div className="text-muted-foreground py-16 text-center">No form components found matching "{query}"</div>
               ) : (
-                <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+                <div className="columns-1 gap-8 lg:columns-2">
                   {filtered.forms.map((doc) => (
-                    <DocCard key={doc.id} doc={doc} />
+                    <div key={doc.id} className="break-inside-avoid mb-8">
+                      <DocCard doc={doc} />
+                    </div>
                   ))}
                 </div>
               )}
@@ -114,9 +116,11 @@ const ComponentsGalleryPage = () => {
               {filtered.tables.length === 0 ? (
                 <div className="text-muted-foreground py-16 text-center">No table components found matching "{query}"</div>
               ) : (
-                <div className="grid grid-cols-1 gap-8">
+                <div className="columns-1 gap-8">
                   {filtered.tables.map((doc) => (
-                    <DocCard key={doc.id} doc={doc} />
+                    <div key={doc.id} className="break-inside-avoid mb-8">
+                      <DocCard doc={doc} />
+                    </div>
                   ))}
                 </div>
               )}
@@ -126,9 +130,11 @@ const ComponentsGalleryPage = () => {
               {filtered.shared.length === 0 ? (
                 <div className="text-muted-foreground py-16 text-center">No shared components found matching "{query}"</div>
               ) : (
-                <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
+                <div className="columns-1 gap-8 lg:columns-2 xl:columns-3">
                   {filtered.shared.map((doc) => (
-                    <DocCard key={doc.id} doc={doc} />
+                    <div key={doc.id} className="break-inside-avoid mb-8">
+                      <DocCard doc={doc} />
+                    </div>
                   ))}
                 </div>
               )}
@@ -138,9 +144,11 @@ const ComponentsGalleryPage = () => {
               {filtered.hooksUtils.length === 0 ? (
                 <div className="text-muted-foreground py-16 text-center">No hooks or utilities found matching "{query}"</div>
               ) : (
-                <div className="grid grid-cols-1 gap-8 xl:grid-cols-2">
+                <div className="columns-1 gap-8 xl:columns-2">
                   {filtered.hooksUtils.map((doc) => (
-                    <HookUtilCard key={doc.id} doc={doc} />
+                    <div key={doc.id} className="break-inside-avoid mb-8">
+                      <HookUtilCard doc={doc} />
+                    </div>
                   ))}
                 </div>
               )}

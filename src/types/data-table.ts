@@ -1,21 +1,9 @@
 import '@tanstack/react-table';
-import type { ColumnSort, Row, RowData } from '@tanstack/react-table';
+import type { ColumnSort, Row } from '@tanstack/react-table';
 import { DataTableConfig } from '@app-config';
 import { FilterItemSchema } from '@utils';
 import * as React from 'react';
 
-declare module '@tanstack/react-table' {
-  // biome-ignore lint/correctness/noUnusedVariables: <explanation>
-  interface ColumnMeta<TData extends RowData, TValue> {
-    label?: string;
-    placeholder?: string;
-    variant?: FilterVariant;
-    options?: Option[];
-    range?: [number, number];
-    unit?: string;
-    icon?: React.FC<React.SVGProps<SVGSVGElement>>;
-  }
-}
 
 export interface Option {
   label: string;
